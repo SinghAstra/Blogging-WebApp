@@ -1,27 +1,32 @@
+"use client";
 import Link from "next/link";
 import React from "react";
+import { usePathname } from "next/navigation";
+import NavLink from "./NavLink";
 
 const Navbar = () => {
+  const pathname = usePathname();
+  const isAuthenticated = true;
+  const isAdmin = true;
   return (
-    <div className="flex justify-between bg-black text-white font-mono items-center py-3 px-5 shadow-lg">
+    <div
+      className={`flex justify-between font-mono items-center py-3 px-5 shadow-lg bg-black text-white`}
+    >
       <div>
         <h1 className="text-xl">
           <Link href={"/"}>Blogging Web App</Link>
         </h1>
       </div>
-      <div className="flex gap-2">
-        <Link
-          href={"/about"}
-          className="py-2 px-4 rounded-2xl hover:bg-white hover:text-black"
-        >
-          About
-        </Link>
-        <Link
-          href={"/contact"}
-          className="py-2 px-4 rounded-2xl hover:bg-white hover:text-black"
-        >
-          Contact
-        </Link>
+      <div className="flex gap-3">
+        <NavLink href={"/about"} text="About" currentPath={pathname} />
+        <NavLink href={"/contact"} text="Contact" currentPath={pathname} />
+        <NavLink href={"/blog"} text="Blog" currentPath={pathname} />
+        {isAdmin && (
+          <NavLink href={"/admin"} text="Admin" currentPath={pathname} />
+        )}
+        <button className="bg-black rounded-2xl py-2 px-4 border bottom-2 border-white hover:bg-white hover:text-black">
+          {isAuthenticated ? "Log Out" : "Log In"}
+        </button>
       </div>
     </div>
   );
