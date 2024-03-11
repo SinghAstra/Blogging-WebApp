@@ -6,8 +6,8 @@ const NavLink = ({ href, text, currentPath }) => (
   <Link
     href={href}
     className={`py-2 px-4 rounded-2xl ${
-      currentPath === href ? "bg-white text-black" : "text-white"
-    }`}
+      currentPath === href ? "bg-blue-400 text-black" : "text-white"
+    } hover:bg-blue-400 hover:text-black`}
   >
     {text}
   </Link>

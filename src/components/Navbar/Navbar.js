@@ -17,14 +17,14 @@ const Navbar = () => {
           <Link href={"/"}>Blogging Web App</Link>
         </h1>
       </div>
-      <div className="flex gap-3">
+      <div className="gap-3 hidden md:flex">
         <NavLink href={"/about"} text="About" currentPath={pathname} />
         <NavLink href={"/contact"} text="Contact" currentPath={pathname} />
         <NavLink href={"/blog"} text="Blog" currentPath={pathname} />
         {isAdmin && (
           <NavLink href={"/admin"} text="Admin" currentPath={pathname} />
         )}
-        <button className="bg-black rounded-2xl py-2 px-4 border bottom-2 border-white hover:bg-white hover:text-black">
+        <button className="bg-black rounded-2xl py-2 px-4 border bottom-2 border-blue-400 hover:bg-blue-400 hover:text-black">
           {isAuthenticated ? "Log Out" : "Log In"}
         </button>
       </div>
