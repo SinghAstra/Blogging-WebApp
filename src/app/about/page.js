@@ -40,8 +40,10 @@ const AboutPage = () => {
           </div>
         </div>
       </div>
-      <div className="flex-1 h-screen relative">
-        <Image src={"/images/about.png"} alt="idea" fill />
+      <div className="flex-1 h-screen flex justify-center items-center">
+        <div className="w-4/5 h-4/5 relative">
+          <Image src={"/images/about.png"} alt="idea" fill />
+        </div>
       </div>
     </div>
   );
