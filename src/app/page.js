@@ -13,7 +13,7 @@ export default function Home() {
           thoughts with the world.
         </p>
       </div>
-      <div className="flex-1  relative bg-pink-400">
+      <div className="flex-1 relative">
         <Image src={"/images/hero.gif"} alt="idea" fill />
       </div>
     </div>
