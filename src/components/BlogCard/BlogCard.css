@@ -1,6 +1,7 @@
 .image-container {
-  width: 90%;
+  width: 85%;
 }
 .date-container {
-  position: absolute;
+  width: 15%;
+  writing-mode: vertical-lr;
 }
